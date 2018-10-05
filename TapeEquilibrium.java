@@ -9,7 +9,7 @@ public class TapeEquilibrium {
 	}
 
 
-//O(n*n)
+    //O(n*n)
     public static int solution(int[] A) {
         // write your code in Java SE 8
         int min = 100000;
@@ -29,6 +29,29 @@ public class TapeEquilibrium {
             left = 0;
             right = 0;
         }
+        return min;
+    }
+    
+    //O(n)
+    public static int solution1(int[] A) {
+        // write your code in Java SE 8
+        int total = 0;
+        int left = 0;
+        int right = 0;
+        int min = Integer.MAX_VALUE;
+        
+        for(int i = 0;i<A.length; i++){
+            total += A[i];
+        }
+        
+        for(int i = 1; i<A.length; i++){
+            left += A[i-1];
+            right = total - left;
+            if(min>Math.abs(left-right)){
+                min = Math.abs(left-right);
+            }
+        }
+        
         return min;
     }
 }
