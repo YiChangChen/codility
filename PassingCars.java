@@ -4,10 +4,11 @@ public class PassingCars {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println(solution(new int[]{0,1,0,1,1}));
 
 	}
 	
-	 public int solution(int[] A) {
+	 public static int solution(int[] A) {
 	        // write your code in Java SE 8
 	        //O(n*n)   
 		    int result = 0;
